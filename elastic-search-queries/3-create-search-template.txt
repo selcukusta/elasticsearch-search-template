@@ -1,0 +1,13 @@
+curl -X POST \
+  http://localhost:9200/_search/template/basic_search_template \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+    "template": {
+        "query": {
+            "match": {
+                "title": "{{query_string}}"
+            }
+        }
+    }
+}'

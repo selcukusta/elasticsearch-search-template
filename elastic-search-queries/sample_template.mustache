@@ -1,0 +1,28 @@
+{
+    "template": {
+        "query": {
+            "bool": {
+            "must": {
+                "match": {
+                "title": "{{query_string}}" 
+                    }
+                },
+                "filter": {
+                    {{#date_range_filter}} 
+                    "range": {
+                        "created_date": {
+                        {{#start}} 
+                            "gte": "{{start}}" 
+                            {{#end}},{{/end}} 
+                        {{/start}} 
+                        {{#end}} 
+                            "lte": "{{end}}" 
+                        {{/end}} 
+                        }
+                    }
+                    {{/date_range_filter}} 
+                }
+            }
+        }
+    }
+}

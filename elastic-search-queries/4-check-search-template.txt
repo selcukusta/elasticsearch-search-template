@@ -1,0 +1,4 @@
+curl -X GET \
+  http://localhost:9200/_search/template/basic_search_template \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 1ebb2313-26b8-884e-2f46-e373be8d6743'
